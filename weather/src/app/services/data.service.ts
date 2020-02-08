@@ -6,8 +6,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class DataService {
   constructor(private http: HttpClient) {}
-  getData() {
-    let _url: string = ` https://openweathermap.org/api`;
+  getData(pincode = "") {
+    let _url: string = `api.openweathermap.org/data/2.5/weather?zip=${pincode},us`;
     return this.http.get(_url);
   }
 }
